@@ -5,13 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sibonga Cebu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <nav>
-        <div class="nav-brand">Sibonga</div>
+        <div class="nav-brand">Sibonga<span>, Cebu</span></div>
         <div class="nav-links">
             <a href="#about">About</a>
             <a href="#history">History</a>
@@ -22,7 +26,21 @@
             <a href="#barangays">Barangays</a>
             <a href="#contact">Contact</a>
         </div>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#about">About</a>
+        <a href="#history">History</a>
+        <a href="#attractions">Attractions</a>
+        <a href="#culture">Culture</a>
+        <a href="#location">Location</a>
+        <a href="#economy">Economy</a>
+        <a href="#barangays">Barangays</a>
+        <a href="#contact">Contact</a>
+    </div>
 
     <div class="hero">
         <div class="hero-content">
@@ -45,11 +63,11 @@
                 <p>From Cebu City</p>
             </div>
             <div class="stat-item">
-                <h3>3rd class</h3>
+                <h3>3rd Class</h3>
                 <p>Municipality</p>
             </div>
             <div class="stat-item">
-                <h3>60+ km&sup2;</h3>
+                <h3>60+ km²</h3>
                 <p>Land Area</p>
             </div>
         </div>
@@ -69,10 +87,9 @@
                         <p>The municipality is part of the 3rd District of Cebu and is bounded by the municipalities of
                             Argao to the south, Carcar City to the north, Alegria to the southwest, and the Tañon Strait
                             to the west.</p>
-                        <p>Known for its relatively quiet and rural character, Sibonga maintains strong ties to its
-                            agricultural roots while its coastal communities engage in fishing and small-scale commerce.
-                            The municipality serves as an important transit point for those traveling further south
-                            along the southern Cebu coastal road.</p>
+                        <p>Sibonga is home to the world-famous Simala Shrine — one of the Philippines' most visited
+                            pilgrimage destinations — while its coastal communities continue a proud tradition of
+                            fishing and agriculture.</p>
                     </div>
                     <div class="highlight-cards">
                         <div class="highlight-card">
@@ -84,12 +101,14 @@
                             <p>Located about 73 km south of Cebu City, accessible via the national highway.</p>
                         </div>
                         <div class="highlight-card">
-                            <h4>Community Life</h4>
-                            <p>A close-knit community with vibrant local fiestas and traditional Filipino values.</p>
+                            <h4>Pilgrimage Hub</h4>
+                            <p>Home to the Simala Shrine, drawing thousands of devotees from across the Philippines.</p>
                         </div>
                     </div>
                 </div>
                 <div class="about-img">
+                    <img src="./assets/plaza.webp" alt="Simala Shrine in Sibonga, Cebu" loading="lazy"
+                        onerror="this.src='./assets/plaza.webp'">
                 </div>
             </div>
         </div>
@@ -101,6 +120,7 @@
             <h2 class="section-title">History of Sibonga</h2>
             <div class="section-divider"></div>
             <div class="timeline">
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-year">Pre-Colonial Era</div>
@@ -109,40 +129,43 @@
                         Spanish colonization. These early settlers relied on fishing in the Tañon Strait and farming in
                         the interior upland areas for their livelihood.</p>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-year">1565 - 1600s</div>
+                    <div class="timeline-year">1565 – 1600s</div>
                     <h4>Spanish Colonization</h4>
                     <p>With the arrival of Spanish colonizers in Cebu under Miguel Lopez de Legazpi, the region was
                         gradually brought under colonial administration. The Catholic faith was introduced and a parish
-                        was established in the area, which profoundly shaped the culture and traditions that persist to
-                        this day.</p>
+                        was established, profoundly shaping the culture and traditions that persist to this day.</p>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-year">17th - 18th Century</div>
+                    <div class="timeline-year">17th – 18th Century</div>
                     <h4>Establishment as a Municipality</h4>
                     <p>Sibonga was formally constituted as a municipality during the Spanish colonial period. The town
                         center developed around the church and plaza, following the typical colonial urban design
-                        pattern that characterized many Philippine municipalities.</p>
+                        pattern of Philippine municipalities.</p>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-year">1898 - 1946</div>
+                    <div class="timeline-year">1898 – 1946</div>
                     <h4>American Colonial Period and World War II</h4>
                     <p>During the American period, public schools were established and local governance was reorganized.
                         Like much of Cebu, Sibonga experienced the hardships of the Japanese occupation during World War
                         II before the liberation of the Philippines in 1945.</p>
                 </div>
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-year">1946 - Present</div>
+                    <div class="timeline-year">1946 – Present</div>
                     <h4>Post-Independence Growth</h4>
                     <p>Following Philippine independence, Sibonga continued to develop as a municipality within Cebu
-                        province. The construction of the national highway along the southern Cebu coast improved
-                        accessibility. The municipality has maintained its agricultural and fishing character while
-                        gradually expanding local services and infrastructure.</p>
+                        province. The Simala Shrine has transformed Barangay Simala into one of the country's most
+                        famous pilgrimage destinations, bringing widespread recognition to the municipality.</p>
                 </div>
+
             </div>
         </div>
     </section>
@@ -153,54 +176,103 @@
             <h2 class="section-title">Places to Visit</h2>
             <div class="section-divider"></div>
             <div class="attractions-grid">
+
                 <div class="attraction-card">
-                    <div class="attraction-img attraction-strait">
+                    <div class="attraction-img">
+                        <img src="./assets/plaza.webp" alt="Simala Shrine" loading="lazy"
+                            onerror="this.src='./assets/plaza.webp'">
+                        <div class="attraction-img-overlay"></div>
+                        <div class="attraction-img-label">Simala Shrine</div>
+                    </div>
+                    <div class="attraction-body">
+                        <span class="attraction-tag">Pilgrimage</span>
+                        <h4>Simala Shrine (Our Lady of Simala)</h4>
+                        <p>One of the Philippines' most visited pilgrimage destinations, the castle-like Simala Shrine
+                            in Barangay Simala is dedicated to Our Lady of Simala. Thousands of devotees arrive each
+                            year seeking healing and miracles from the miraculous image of the Virgin Mary.</p>
+                    </div>
+                </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-img">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
+                            alt="Tañon Strait coastline" loading="lazy">
+                        <div class="attraction-img-overlay"></div>
                         <div class="attraction-img-label">Tañon Strait</div>
                     </div>
                     <div class="attraction-body">
                         <span class="attraction-tag">Nature</span>
                         <h4>Tañon Strait Coastline</h4>
                         <p>The western coast of Sibonga faces the scenic Tañon Strait, a protected seascape between Cebu
-                            and Negros Island. Visitors can enjoy fishing, coastal walks, and views of the strait
-                            especially during sunset.</p>
+                            and Negros Island. Visitors can enjoy fishing, coastal walks, and breathtaking sunset views
+                            over the open water.</p>
                     </div>
                 </div>
+
                 <div class="attraction-card">
-                    <div class="attraction-img attraction-church">
+                    <div class="attraction-img">
+                        <img src="https://images.unsplash.com/photo-1548445929-4f60a497f851?w=800&q=80"
+                            alt="Saint Michael Parish Church" loading="lazy">
+                        <div class="attraction-img-overlay"></div>
                         <div class="attraction-img-label">Parish Church</div>
                     </div>
                     <div class="attraction-body">
                         <span class="attraction-tag">Heritage</span>
                         <h4>Saint Michael the Archangel Parish Church</h4>
                         <p>The centuries-old parish church stands as the spiritual and historical center of Sibonga.
-                            Built during the Spanish colonial era, the church is a significant heritage structure and
-                            remains an active place of worship for the community.</p>
+                            Built during the Spanish colonial era, this heritage structure remains an active place of
+                            worship and an enduring symbol of Sibonga's faith.</p>
                     </div>
                 </div>
+
                 <div class="attraction-card">
-                    <div class="attraction-img attraction-fishing">
+                    <div class="attraction-img">
+                        <img src="https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=800&q=80"
+                            alt="Fishing communities" loading="lazy">
+                        <div class="attraction-img-overlay"></div>
                         <div class="attraction-img-label">Fishing Communities</div>
                     </div>
                     <div class="attraction-body">
                         <span class="attraction-tag">Coastal</span>
                         <h4>Fishing Communities and Coves</h4>
-                        <p>The coastal barangays of Sibonga host traditional fishing communities where visitors can
-                            observe traditional boat-building, observe the daily activities of fishermen, and sample
-                            fresh local seafood caught directly from the Tañon Strait.</p>
+                        <p>The coastal barangays host traditional fishing communities where visitors can observe
+                            traditional bangka boat-building, watch fishermen at work, and sample fresh seafood caught
+                            daily from the Tañon Strait.</p>
                     </div>
                 </div>
+
                 <div class="attraction-card">
-                    <div class="attraction-img attraction-plaza">
+                    <div class="attraction-img">
+                        <img src="https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=800&q=80"
+                            alt="Town Center and Plaza" loading="lazy">
+                        <div class="attraction-img-overlay"></div>
                         <div class="attraction-img-label">Town Center & Plaza</div>
                     </div>
                     <div class="attraction-body">
                         <span class="attraction-tag">Culture</span>
                         <h4>Sibonga Town Center and Plaza</h4>
-                        <p>The town plaza and surrounding civic structures reflect the traditional colonial layout of
-                            Philippine municipalities. The area is the social heart of the town, particularly lively
-                            during local fiestas, community events, and weekend markets.</p>
+                        <p>The town plaza reflects the traditional colonial layout of Philippine municipalities. This
+                            social heart of the town comes alive during local fiestas, community events, and lively
+                            weekend markets throughout the year.</p>
                     </div>
                 </div>
+
+                <div class="attraction-card">
+                    <div class="attraction-img">
+                        <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80"
+                            alt="Upland farms and scenic views" loading="lazy">
+                        <div class="attraction-img-overlay"></div>
+                        <div class="attraction-img-label">Upland Views</div>
+                    </div>
+                    <div class="attraction-body">
+                        <span class="attraction-tag">Nature</span>
+                        <h4>Upland Farms and Scenic Views</h4>
+                        <p>The interior upland barangays of Sibonga offer lush agricultural landscapes, fresh cool air,
+                            and sweeping views of the Cebu highlands — a peaceful escape from the coast and a glimpse of
+                            traditional rural Filipino life.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -213,39 +285,34 @@
             <div class="culture-grid">
                 <div class="culture-card">
                     <h4>Feast of Saint Michael the Archangel</h4>
-                    <p>The town fiesta celebrated in honor of the patron saint, Saint Michael the Archangel, is the most
-                        significant annual cultural and religious event in Sibonga. It features processions, novenas,
-                        cultural shows, and community gatherings that bring together residents from all barangays.</p>
+                    <p>The main town fiesta honoring the patron saint features processions, novenas, cultural shows, and
+                        community gatherings that unite residents from all 44 barangays.</p>
+                </div>
+                <div class="culture-card">
+                    <h4>Simala Marian Devotion</h4>
+                    <p>The Simala Shrine hosts major celebrations on Marian feast days. Devotees from across the
+                        Philippines make the pilgrimage to Sibonga year-round to venerate Our Lady of Simala.</p>
                 </div>
                 <div class="culture-card">
                     <h4>Cebuano Heritage and Language</h4>
-                    <p>The people of Sibonga speak Cebuano (Bisaya) as their primary language and maintain deep pride in
-                        their Visayan cultural heritage. Traditional practices in music, dance, and craftsmanship are
-                        preserved through community organizations and schools.</p>
+                    <p>The people of Sibonga speak Cebuano (Bisaya) and take deep pride in their Visayan roots,
+                        preserving traditional music, dance, and craftsmanship through schools and community groups.</p>
                 </div>
                 <div class="culture-card">
                     <h4>Traditional Fishing Practices</h4>
-                    <p>Coastal communities in Sibonga have maintained traditional fishing methods passed down through
-                        generations. These include the use of traditional fishing boats called "bangka" and various
-                        local net and line fishing techniques suited to the waters of the Tañon Strait.</p>
+                    <p>Coastal communities maintain fishing methods passed down through generations, including bangka
+                        boats and local net and line techniques suited to the Tañon Strait's waters.</p>
                 </div>
                 <div class="culture-card">
                     <h4>Local Cuisine</h4>
-                    <p>The food culture of Sibonga reflects its coastal and agricultural setting. Fresh seafood dishes,
-                        rice-based meals, and traditional Cebuano recipes such as kinilaw (raw fish cured in vinegar),
-                        sinuglaw, and various dried fish preparations are staples of local cuisine.</p>
+                    <p>Fresh seafood, rice-based meals, kinilaw (raw fish cured in vinegar), sinuglaw, and dried fish
+                        are staples. The food culture reflects both the coastal and agricultural character of the
+                        municipality.</p>
                 </div>
                 <div class="culture-card">
                     <h4>Barangay Fiestas</h4>
-                    <p>Each of the 44 barangays of Sibonga celebrates its own patron saint's feast day throughout the
-                        year. These smaller community fiestas are characterized by neighborhood celebrations, shared
-                        meals, games, and religious observances that strengthen community bonds.</p>
-                </div>
-                <div class="culture-card">
-                    <h4>Agriculture and Folk Traditions</h4>
-                    <p>The upland barangays of Sibonga maintain agricultural traditions including the cultivation of
-                        corn, root crops, and vegetables. Folk beliefs, herbal medicine knowledge, and oral traditions
-                        rooted in Visayan culture are still observed in many rural communities.</p>
+                    <p>Each of the 44 barangays celebrates its patron saint's feast day with neighborhood gatherings,
+                        shared meals, games, and religious observances — strengthening bonds within each community.</p>
                 </div>
             </div>
         </div>
@@ -259,8 +326,7 @@
             <div class="location-grid">
                 <div class="location-info">
                     <p>Sibonga is located in the southern portion of Cebu Island, approximately 73 kilometers south of
-                        Cebu City. The municipality lies along the southwestern coast of Cebu, bordered by the Tañon
-                        Strait to the west.</p>
+                        Cebu City, along the southwestern coast bordered by the Tañon Strait.</p>
                     <h4>Bordered By</h4>
                     <ul>
                         <li>North: Carcar City</li>
@@ -272,12 +338,12 @@
                     <p>Approximately 10.0333 N, 123.5667 E</p>
                     <h4>How to Get There</h4>
                     <ul>
-                        <li>From Cebu City: Take a bus or van bound for Oslob or Bato from the South Bus Terminal. Ask
-                            to be dropped off in Sibonga. Travel time is approximately 1.5 to 2 hours.</li>
-                        <li>Via private vehicle: Follow the national highway heading south from Cebu City through
-                            Talisay, Minglanilla, Naga, Carcar, and into Sibonga.</li>
+                        <li>From Cebu City: Take a bus or van bound for Oslob or Bato from the South Bus Terminal.
+                            Travel time is approximately 1.5 to 2 hours.</li>
+                        <li>Via private vehicle: Follow the national highway south through Talisay, Minglanilla, Naga,
+                            Carcar, and into Sibonga.</li>
                         <li>Habal-habal (motorcycle taxi) and tricycles are available within the municipality for local
-                            transportation.</li>
+                            transport.</li>
                     </ul>
                 </div>
                 <div class="map-box">
@@ -285,8 +351,8 @@
                         src="https://www.openstreetmap.org/export/embed.html?bbox=123.4800%2C9.9800%2C123.6300%2C10.1200&layer=mapnik&marker=10.0333%2C123.5667"
                         allowfullscreen loading="lazy" title="Map of Sibonga, Cebu"></iframe>
                     <div
-                        style="padding:0.75rem 1rem;font-size:0.8rem;color:var(--text-muted);border-top:1px solid var(--border)">
-                        Map data from OpenStreetMap contributors. Sibonga, Cebu Province, Philippines.
+                        style="padding:.65rem 1rem;font-size:.78rem;color:var(--text-muted);border-top:1px solid var(--border)">
+                        Map data from OpenStreetMap contributors · Sibonga, Cebu Province, Philippines
                     </div>
                 </div>
             </div>
@@ -298,8 +364,8 @@
             <div class="section-label">Livelihood</div>
             <h2 class="section-title">Economy and Industry</h2>
             <div class="section-divider"></div>
-            <p style="color:var(--text-muted);margin-bottom:2rem;font-size:0.95rem">The economy of Sibonga is primarily
-                based on agriculture and fishing, with a growing service sector supporting the local population.</p>
+            <p style="color:var(--text-muted);margin-bottom:2rem;font-size:.95rem">The economy of Sibonga is anchored in
+                agriculture, fishing, and increasingly, religious tourism driven by the Simala Shrine.</p>
             <div class="economy-grid">
                 <div class="economy-card">
                     <h4>Agriculture</h4>
@@ -310,12 +376,12 @@
                     <p>Small-scale commercial and subsistence fishing in the Tañon Strait</p>
                 </div>
                 <div class="economy-card">
-                    <h4>Commerce</h4>
-                    <p>Local markets, sari-sari stores, and small business establishments</p>
+                    <h4>Religious Tourism</h4>
+                    <p>Simala Shrine draws pilgrims and tourists from across the country year-round</p>
                 </div>
                 <div class="economy-card">
-                    <h4>Public Service</h4>
-                    <p>Government offices, schools, healthcare facilities, and utilities</p>
+                    <h4>Commerce</h4>
+                    <p>Local markets, sari-sari stores, and small business establishments</p>
                 </div>
             </div>
         </div>
@@ -326,8 +392,8 @@
             <div class="section-label">Administrative Divisions</div>
             <h2 class="section-title">Barangays of Sibonga</h2>
             <div class="section-divider"></div>
-            <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:0.95rem">Sibonga is composed of 44
-                barangays spread across coastal and upland areas of the municipality.</p>
+            <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:.95rem">Sibonga is composed of 44 barangays
+                spread across coastal and upland areas of the municipality.</p>
             <div class="barangay-grid">
                 <div class="barangay-item">Abugon</div>
                 <div class="barangay-item">Bae</div>
@@ -381,7 +447,7 @@
         <div class="container">
             <div class="section-label" style="color:var(--accent)">Get in Touch</div>
             <h2 class="section-title">Contact and Information</h2>
-            <div class="section-divider" style="background:#fff;opacity:0.3"></div>
+            <div class="section-divider" style="background:#fff;opacity:.3"></div>
             <div class="contact-grid">
                 <div>
                     <div class="contact-item">
@@ -436,44 +502,51 @@
                 Visayas</span></p>
     </footer>
 
-    <button class="chatbot-toggle" id="chatToggle" aria-label="Open chat assistant">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <div class="chat-overlay" id="chatOverlay"></div>
+
+    <button class="chat-fab" id="chatFab" aria-label="Open Sibonga Guide chat">
+        <svg viewBox="0 0 24 24">
             <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z" />
         </svg>
+        <div class="notif"></div>
     </button>
 
-    <div class="chatbot-window" id="chatWindow">
-        <div class="chatbot-header">
-            <div class="chatbot-header-info">
-                <div class="chatbot-avatar">S</div>
+    <div class="chat-box" id="chatBox" role="dialog" aria-label="Sibonga Guide">
+        <div class="chat-head">
+            <div class="chat-head-l">
+                <div class="chat-avi">S</div>
                 <div>
                     <h3>Sibonga Guide</h3>
                     <p>Ask me anything about Sibonga</p>
                 </div>
             </div>
-            <button class="chatbot-close" id="chatClose" aria-label="Close chat">
+            <button class="chat-close-btn" id="chatClose" aria-label="Close chat">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     <path
                         d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
                 </svg>
             </button>
         </div>
-        <div class="quick-chips" id="quickChips">
-            <span class="chip" data-q="Where is Sibonga located?">Location</span>
-            <span class="chip" data-q="What are the tourist spots in Sibonga?">Tourism</span>
-            <span class="chip" data-q="What is the history of Sibonga?">History</span>
-            <span class="chip" data-q="How do I get to Sibonga from Cebu City?">How to get there</span>
-            <span class="chip" data-q="What are the barangays of Sibonga?">Barangays</span>
-            <span class="chip" data-q="What festivals are celebrated in Sibonga?">Festivals</span>
+
+        <div class="chat-chips" id="chatChips">
+            <button class="chip" data-q="where is sibonga">Location</button>
+            <button class="chip" data-q="what to visit">Tourist Spots</button>
+            <button class="chip" data-q="simala shrine">Simala Shrine</button>
+            <button class="chip" data-q="history">History</button>
+            <button class="chip" data-q="how to get there">Getting There</button>
+            <button class="chip" data-q="festivals">Festivals</button>
+            <button class="chip" data-q="barangays">Barangays</button>
         </div>
-        <div class="chatbot-messages" id="chatMessages">
-            <div class="msg bot">Hello! I am the Sibonga Guide. I can answer your questions about the municipality of
-                Sibonga in Cebu — its location, history, attractions, barangays, culture, economy, and more. How can I
-                help you?</div>
+
+        <div class="chat-msgs" id="chatMsgs">
+            <div class="cmsg bot">Hello! I am the Sibonga Guide. Ask me anything about Sibonga, Cebu — its location,
+                history, the Simala Shrine, tourist spots, barangays, culture, and more. How can I help you?</div>
         </div>
-        <div class="chatbot-footer">
-            <input type="text" class="chatbot-input" id="chatInput" placeholder="Ask about Sibonga..." maxlength="300">
-            <button class="chatbot-send" id="chatSend">Send</button>
+
+        <div class="chat-foot">
+            <input class="chat-input" id="chatInput" type="text" placeholder="Ask about Sibonga..." maxlength="300"
+                autocomplete="off">
+            <button class="chat-send-btn" id="chatSend">Send</button>
         </div>
     </div>
 

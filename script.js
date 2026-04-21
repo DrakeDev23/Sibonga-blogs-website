@@ -1,172 +1,181 @@
-const KNOWLEDGE = `
-You are "Sibonga Guide," a helpful assistant for the official blog website about Sibonga, Cebu, Philippines.
-You ONLY answer questions about what is covered on this website. If the question is not related to Sibonga, Cebu, politely say you can only help with information about Sibonga.
 
-Here is the complete information available on this website:
+const KB = [
+    {
+        keys: ['where', 'location', 'located', 'coordinates', 'map', 'find', 'place', 'address', 'situated'],
+        answer: "Sibonga is a municipality in the southern part of Cebu province, Philippines, approximately 73 kilometers south of Cebu City. It lies along the southwestern coast of Cebu Island, facing the Tañon Strait to the west. Its coordinates are approximately 10.0333°N, 123.5667°E. It is bounded by Carcar City to the north, Argao to the south, Alegria to the east, and the Tañon Strait to the west."
+    },
+    {
+        keys: ['simala', 'shrine', 'our lady', 'virgin', 'miraculous', 'pilgrimage', 'miracle', 'healing', 'devotion', 'castle church'],
+        answer: "The Simala Shrine, formally known as the Monastery of the Holy Eucharist, is located in Barangay Simala, Sibonga. It is one of the most visited pilgrimage sites in the Philippines, famous for its stunning castle-like architecture and the miraculous image of Our Lady of Simala. Thousands of devotees from all over the country travel to Sibonga each year to pray, seek healing, and give thanks. The shrine holds major Marian celebrations throughout the year, especially during Marian feast days."
+    },
+    {
+        keys: ['tourist', 'attraction', 'visit', 'spot', 'see', 'places', 'go', 'tourism', 'sightseeing', 'travel'],
+        answer: "Sibonga has several wonderful places to visit:\n\n1. Simala Shrine – The famous castle-like pilgrimage church in Barangay Simala, one of the most visited sites in the Philippines.\n2. Tañon Strait Coastline – Scenic protected seascape with sunset views, fishing, and coastal walks.\n3. Saint Michael the Archangel Parish Church – A centuries-old heritage church in the town center.\n4. Fishing Communities and Coves – Traditional bangka boat-building, fresh seafood, and fishing culture in coastal barangays.\n5. Sibonga Town Center and Plaza – Colonial-era plaza that comes alive during fiestas and markets.\n6. Upland Farms – Lush agricultural landscapes and panoramic views in the interior barangays."
+    },
+    {
+        keys: ['history', 'historical', 'colonial', 'spanish', 'past', 'founded', 'established', 'origin', 'precolonial', 'american', 'war', 'world war'],
+        answer: "Sibonga has a rich history spanning several centuries:\n\n• Pre-Colonial Era: Indigenous Visayan communities lived along the coast, relying on fishing and farming.\n• 1565–1600s: Spanish colonizers arrived under Miguel Lopez de Legazpi, introducing Catholicism and establishing a parish.\n• 17th–18th Century: Sibonga was formally constituted as a municipality, with the town developing around a church and plaza.\n• 1898–1946: During the American period, public schools were built and governance was reorganized. Sibonga experienced Japanese occupation in World War II.\n• 1946–Present: After independence, Sibonga grew steadily. The Simala Shrine became a major landmark, drawing national attention."
+    },
+    {
+        keys: ['how to get', 'directions', 'travel', 'bus', 'van', 'jeepney', 'habal', 'tricycle', 'transport', 'commute', 'ride', 'south bus terminal', 'south terminal', 'from cebu'],
+        answer: "To get to Sibonga from Cebu City:\n\n• By Public Transport: Go to the South Bus Terminal (Cebu South Bus Terminal) and take a bus or van headed to Oslob or Bato. Tell the driver to drop you off in Sibonga. Travel time is about 1.5 to 2 hours.\n• By Private Vehicle: Follow the national highway south through Talisay, Minglanilla, Naga, and Carcar City, then continue south into Sibonga.\n• Within Sibonga: Habal-habal (motorcycle taxis) and tricycles are the main local transport options between barangays."
+    },
+    {
+        keys: ['festival', 'fiesta', 'celebration', 'patron', 'saint', 'feast', 'tradition', 'event', 'annual'],
+        answer: "Sibonga celebrates several important festivals and traditions:\n\n• Feast of Saint Michael the Archangel – The main town fiesta in honor of the patron saint. Features processions, novenas, cultural shows, and large community gatherings.\n• Simala Marian Devotion – Ongoing pilgrimages and special celebrations on Marian feast days at the Simala Shrine.\n• Barangay Fiestas – Each of the 44 barangays holds its own patron saint's feast day with neighborhood celebrations, shared meals, and games.\n• Religious and Cultural Shows – Music, dance, and folk traditions performed during major community events."
+    },
+    {
+        keys: ['barangay', 'brgy', 'village', 'sitio', 'list of', 'community'],
+        answer: "Sibonga has 44 barangays spread across coastal and upland areas:\n\nAbugon, Bae, Bagacay, Bahay, Banlot, Basak, Bato, Cagay, Can-aga, Candaguit, Cantolaroy, Cogon, Dalid, Dan-an, Guimbawian, Gunting, Lamacan, Liki, Luca, Magcagong, Manatad, Mangyan, Papan, Pering, Poblacion, Tubod, Apid, Baligtos, Binabag, Buyog, Cambibijao, Cambinocot, Campangga, Cansaga, Canturing, Catig, Guibo, Langub, Mantalongon, Panangban, Patag, Salong, San Vicente, and Simala."
+    },
+    {
+        keys: ['food', 'eat', 'cuisine', 'kinilaw', 'sinuglaw', 'seafood', 'dish', 'restaurant', 'delicacy', 'local food'],
+        answer: "The food culture of Sibonga reflects its coastal and agricultural setting. Popular local dishes and foods include:\n\n• Kinilaw – Raw fish cured in vinegar, a classic Visayan appetizer.\n• Sinuglaw – A combination of grilled pork and kinilaw.\n• Fresh Seafood – Fish, shrimp, squid, and shellfish caught daily from the Tañon Strait.\n• Dried Fish (Dried Danggit, Tuyo) – A staple in many coastal households.\n• Rice-based Meals – Paired with various fish and vegetable dishes grown in the upland barangays."
+    },
+    {
+        keys: ['economy', 'livelihood', 'work', 'income', 'industry', 'farming', 'agriculture', 'fishing', 'business', 'commerce'],
+        answer: "The economy of Sibonga is primarily based on:\n\n• Agriculture – Corn, root crops, coconut, and vegetables are grown in the upland barangays.\n• Fishing – Small-scale commercial and subsistence fishing in the Tañon Strait provides livelihood for many coastal families.\n• Religious Tourism – The Simala Shrine draws thousands of visitors and pilgrims year-round, supporting local businesses.\n• Commerce – Local markets, sari-sari stores, and small enterprises serve the community's daily needs.\n• Public Service – Government offices, schools, healthcare facilities, and utilities employ many residents."
+    },
+    {
+        keys: ['culture', 'tradition', 'language', 'bisaya', 'cebuano', 'heritage', 'music', 'dance', 'craft', 'folk'],
+        answer: "Sibonga has a rich Visayan cultural heritage:\n\n• Language: The people speak Cebuano (Bisaya) as their primary language.\n• Music and Dance: Traditional Visayan folk music and dance are preserved through community events and schools.\n• Craftsmanship: Local artisans maintain traditional crafts passed down through generations.\n• Folk Traditions: Herbal medicine knowledge, oral traditions, and folk beliefs rooted in Visayan culture are still observed in rural barangays.\n• Fishing Culture: Traditional bangka boat-building and fishing methods are practiced in coastal communities."
+    },
+    {
+        keys: ['population', 'people', 'residents', 'how many', 'inhabitants'],
+        answer: "Sibonga is a 3rd class municipality in Cebu province. While exact current population figures may vary, it is a mid-sized municipality with 44 barangays covering both coastal and upland communities. The people are predominantly Cebuano-speaking Visayans with strong ties to their agricultural, fishing, and Catholic traditions."
+    },
+    {
+        keys: ['contact', 'address', 'municipal hall', 'mayor', 'government', 'office', 'zip', 'phone', 'zip code'],
+        answer: "Here is the contact information for Sibonga:\n\n• Municipal Hall: Poblacion, Sibonga, Cebu\n• Province: Cebu Province, Philippines\n• Region: Region VII – Central Visayas\n• District: 3rd District of Cebu\n• Zip Code: 6020\n• Classification: 3rd Class Municipality\n• Patron Saint: Saint Michael the Archangel"
+    },
+    {
+        keys: ['patron saint', 'saint michael', 'archangel', 'church patron'],
+        answer: "The patron saint of Sibonga is Saint Michael the Archangel. The main parish church — the Saint Michael the Archangel Parish Church — was built during the Spanish colonial era and remains an active place of worship today. The town fiesta in honor of Saint Michael is the most significant annual religious and cultural event in Sibonga."
+    },
+    {
+        keys: ['tanon strait', 'tanon', 'strait', 'sea', 'ocean', 'west', 'coast', 'fishing area', 'seascape'],
+        answer: "The Tañon Strait is the body of water on Sibonga's western coast, separating Cebu Island from Negros Island. It is a protected seascape and one of the largest straits in the Philippines. Sibonga's coastal barangays depend on the Tañon Strait for fishing, and it offers scenic sunset views and opportunities for coastal walks. The strait is home to diverse marine life and is an important fishing ground for local communities."
+    },
+    {
+        keys: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'kumusta', 'how are you', 'musta'],
+        answer: "Hello! Welcome to the Sibonga Guide. I can answer questions about Sibonga, Cebu — including the Simala Shrine, tourist attractions, history, how to get there, barangays, culture, food, and more. What would you like to know?"
+    },
+    {
+        keys: ['thank', 'thanks', 'salamat', 'great', 'helpful', 'good', 'awesome', 'nice', 'appreciate'],
+        answer: "You are welcome! If you have any more questions about Sibonga, Cebu — whether about the Simala Shrine, tourist spots, history, directions, or anything else — feel free to ask anytime."
+    },
+    {
+        keys: ['who made', 'developer', 'website', 'created', 'built', 'made this'],
+        answer: "This is the official informational website about Sibonga, Cebu, Philippines. It covers the municipality's overview, history, tourist attractions including the Simala Shrine, culture, barangays, economy, and how to get there. Is there something specific about Sibonga I can help you with?"
+    }
+];
 
-OVERVIEW:
-Sibonga is a 3rd class municipality in the southern part of Cebu province, Philippines. It is located in the 3rd District of Cebu. It has 44 barangays. The zip code is 6020. Its area is over 60 square kilometers. The patron saint is Saint Michael the Archangel.
+function findAnswer(text) {
+    const q = text.toLowerCase().replace(/[?!.,]/g, '');
+    let bestMatch = null;
+    let bestScore = 0;
+    for (const entry of KB) {
+        let score = 0;
+        for (const kw of entry.keys) {
+            if (q.includes(kw)) score += kw.split(' ').length;
+        }
+        if (score > bestScore) { bestScore = score; bestMatch = entry; }
+    }
+    if (bestMatch && bestScore > 0) return bestMatch.answer;
+    return "I am sorry, I don't have information about that. I can only answer questions about Sibonga, Cebu — such as the Simala Shrine, tourist spots, history, how to get there, barangays, culture, food, and more. Please try asking something else about Sibonga!";
+}
 
-LOCATION:
-Sibonga is approximately 73 kilometers south of Cebu City. It faces the Tañon Strait to the west, which separates Cebu from Negros Island. Coordinates are approximately 10.0333 N, 123.5667 E.
-Boundaries: North is Carcar City, South is Argao, East is Alegria (upland area), West is Tañon Strait.
-Region: Region VII - Central Visayas.
-
-HOW TO GET THERE:
-From Cebu City, take a bus or van bound for Oslob or Bato from the South Bus Terminal and ask to be dropped off in Sibonga. Travel time is approximately 1.5 to 2 hours. Via private vehicle, follow the national highway heading south through Talisay, Minglanilla, Naga, Carcar, and into Sibonga. Within the municipality, habal-habal (motorcycle taxis) and tricycles are available.
-
-HISTORY:
-- Pre-Colonial Era: Indigenous Visayan communities inhabited coastal areas. They relied on fishing and farming.
-- 1565-1600s: Spanish colonization under Miguel Lopez de Legazpi. Catholic faith introduced and a parish established.
-- 17th-18th Century: Formally constituted as a municipality during Spanish colonial period. Town center developed around the church and plaza.
-- 1898-1946: American period brought public schools and reorganized governance. Sibonga experienced Japanese occupation in World War II.
-- 1946-Present: Post-independence growth. National highway improved accessibility. Maintained agricultural and fishing character.
-
-ATTRACTIONS AND TOURIST SPOTS:
-1. Tañon Strait Coastline — The western coast faces the scenic Tañon Strait, a protected seascape. Visitors can enjoy fishing, coastal walks, and sunset views.
-2. Saint Michael the Archangel Parish Church — A centuries-old parish church built during the Spanish colonial era. A heritage structure and active place of worship.
-3. Fishing Communities and Coves — Coastal barangays with traditional fishing communities. Visitors can observe traditional boat-building (bangka), watch fishermen, and sample fresh seafood from the Tañon Strait.
-4. Sibonga Town Center and Plaza — Reflects traditional colonial layout. Social heart of the town. Lively during fiestas, community events, and weekend markets.
-
-CULTURE AND FESTIVALS:
-- Feast of Saint Michael the Archangel: The main town fiesta, the most significant annual cultural and religious event. Features processions, novenas, cultural shows, and community gatherings.
-- Cebuano Heritage: People speak Cebuano (Bisaya). Traditional music, dance, and craftsmanship are preserved.
-- Traditional Fishing: Traditional methods include bangka boats and local net and line fishing techniques suited to the Tañon Strait.
-- Local Cuisine: Fresh seafood, rice-based meals, kinilaw (raw fish cured in vinegar), sinuglaw, and dried fish are staples.
-- Barangay Fiestas: Each of the 44 barangays celebrates its own patron saint feast day. Community celebrations with shared meals, games, and religious observances.
-- Agriculture and Folk Traditions: Upland barangays cultivate corn, root crops, and vegetables. Folk beliefs and oral traditions are observed.
-
-ECONOMY:
-- Agriculture: Corn, root crops, coconut, and vegetable farming in upland barangays.
-- Fishing: Small-scale commercial and subsistence fishing in the Tañon Strait.
-- Commerce: Local markets, sari-sari stores, and small business establishments.
-- Public Service: Government offices, schools, healthcare facilities, and utilities.
-
-BARANGAYS (44 total):
-Abugon, Bae, Bagacay, Bahay, Banlot, Basak, Bato, Cagay, Can-aga, Candaguit, Cantolaroy, Cogon, Dalid, Dan-an, Guimbawian, Gunting, Lamacan, Liki, Luca, Magcagong, Manatad, Mangyan, Papan, Pering, Poblacion, Tubod, Apid, Baligtos, Binabag, Buyog, Cambibijao, Cambinocot, Campangga, Cansaga, Canturing, Catig, Guibo, Langub, Mantalongon, Panangban, Patag, Salong, San Vicente, Simala.
-
-CONTACT AND GENERAL INFO:
-- Municipal Hall: Poblacion, Sibonga, Cebu
-- Province: Cebu Province, Philippines
-- Region: Region VII - Central Visayas
-- District: 3rd District of Cebu
-- Zip Code: 6020
-- Patron Saint: Saint Michael the Archangel
-- Classification: 3rd Class Municipality
-
-Answer questions concisely and helpfully using only the above information. If a question is outside this scope, politely redirect to Sibonga-related topics. Do not use emojis.
-`;
-
-const toggle = document.getElementById('chatToggle');
-const chatWindow = document.getElementById('chatWindow');
+const fab = document.getElementById('chatFab');
+const box = document.getElementById('chatBox');
+const overlay = document.getElementById('chatOverlay');
 const closeBtn = document.getElementById('chatClose');
-const messages = document.getElementById('chatMessages');
+const msgs = document.getElementById('chatMsgs');
 const input = document.getElementById('chatInput');
 const sendBtn = document.getElementById('chatSend');
-const chips = document.querySelectorAll('.chip');
-const quickChips = document.getElementById('quickChips');
+const chips = document.getElementById('chatChips');
+const ham = document.getElementById('hamburger');
+const mobnav = document.getElementById('mobileNav');
 
-let history = [];
-let isTyping = false;
+function openChat() {
+    box.classList.add('show');
+    overlay.classList.add('show');
+    fab.classList.remove('ping');
+    setTimeout(() => input.focus(), 100);
+}
 
-toggle.addEventListener('click', () => {
-    chatWindow.classList.toggle('open');
-    if (chatWindow.classList.contains('open')) input.focus();
-});
+function closeChat() {
+    box.classList.remove('show');
+    overlay.classList.remove('show');
+}
 
-closeBtn.addEventListener('click', () => chatWindow.classList.remove('open'));
+fab.addEventListener('click', () => box.classList.contains('show') ? closeChat() : openChat());
+closeBtn.addEventListener('click', closeChat);
+overlay.addEventListener('click', closeChat);
 
-chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-        const q = chip.getAttribute('data-q');
-        quickChips.style.display = 'none';
-        sendMessage(q);
+ham.addEventListener('click', () => mobnav.classList.toggle('open'));
+mobnav.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => mobnav.classList.remove('open'))
+);
+
+chips.querySelectorAll('.chip').forEach(c => {
+    c.addEventListener('click', () => {
+        chips.style.display = 'none';
+        reply(c.dataset.q);
     });
 });
 
 input.addEventListener('keydown', e => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        handleSend();
-    }
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSend(); }
 });
-
 sendBtn.addEventListener('click', handleSend);
 
 function handleSend() {
     const text = input.value.trim();
-    if (!text || isTyping) return;
+    if (!text) return;
     input.value = '';
-    quickChips.style.display = 'none';
-    sendMessage(text);
+    chips.style.display = 'none';
+    reply(text);
 }
 
-function addMessage(text, role) {
-    const div = document.createElement('div');
-    div.className = 'msg ' + role;
-    div.textContent = text;
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-    return div;
+function addMsg(text, role) {
+    const d = document.createElement('div');
+    d.className = 'cmsg ' + role;
+    text.split('\n').forEach((line, i) => {
+        if (i > 0) d.appendChild(document.createElement('br'));
+        d.appendChild(document.createTextNode(line));
+    });
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
 }
 
 function showTyping() {
-    const div = document.createElement('div');
-    div.className = 'msg typing';
-    div.id = 'typingIndicator';
+    const d = document.createElement('div');
+    d.className = 'cmsg typing-bubble';
+    d.id = 'typingDot';
     for (let i = 0; i < 3; i++) {
-        const dot = document.createElement('div');
-        dot.className = 'typing-dot';
-        div.appendChild(dot);
+        const s = document.createElement('div');
+        s.className = 'tdot';
+        d.appendChild(s);
     }
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
 }
 
 function removeTyping() {
-    const t = document.getElementById('typingIndicator');
+    const t = document.getElementById('typingDot');
     if (t) t.remove();
 }
 
-async function sendMessage(text) {
-    if (isTyping) return;
-    isTyping = true;
-
-    addMessage(text, 'user');
-    history.push({ role: 'user', content: text });
+function reply(question) {
+    addMsg(question, 'user');
+    sendBtn.disabled = true;
     showTyping();
-
-    try {
-        const response = await fetch('https://api.anthropic.com/v1/messages', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'anthropic-dangerous-direct-browser-access': 'true'
-            },
-            body: JSON.stringify({
-                model: 'claude-sonnet-4-20250514',
-                max_tokens: 1000,
-                system: KNOWLEDGE,
-                messages: history
-            })
-        });
-
-        const data = await response.json();
+    setTimeout(() => {
         removeTyping();
-
-        if (data.error) {
-            addMessage('Error: ' + (data.error.message || 'Could not get a response. Please try again.'), 'bot');
-        } else {
-            const reply = data.content && data.content[0] && data.content[0].text
-                ? data.content[0].text
-                : 'I am sorry, I could not process your question. Please try again.';
-            addMessage(reply, 'bot');
-            history.push({ role: 'assistant', content: reply });
-        }
-    } catch (e) {
-        removeTyping();
-        addMessage('I encountered a connection error. Please check your internet connection and try again.', 'bot');
-    }
-
-    isTyping = false;
+        const answer = findAnswer(question);
+        addMsg(answer, 'bot');
+        sendBtn.disabled = false;
+        input.focus();
+        if (!box.classList.contains('show')) fab.classList.add('ping');
+    }, 650 + Math.random() * 350);
 }
